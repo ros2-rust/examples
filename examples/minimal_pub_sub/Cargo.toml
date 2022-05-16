@@ -1,0 +1,25 @@
+[package]
+name = "examples_rclrs_minimal_pub_sub"
+version = "0.2.0"
+authors = ["Esteve Fernandez <esteve@apache.org>"]
+edition = "2021"
+
+[[bin]]
+name = "minimal_subscriber"
+path = "src/minimal_subscriber.rs"
+
+[[bin]]
+name = "minimal_publisher"
+path = "src/minimal_publisher.rs"
+
+[dependencies]
+anyhow = {version = "1", features = ["backtrace"]}
+
+[dependencies.rclrs]
+version = "*"
+
+[dependencies.rosidl_runtime_rs]
+version = "*"
+
+[dependencies.std_msgs]
+version = "*"
