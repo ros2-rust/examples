@@ -1,0 +1,37 @@
+[package]
+name = "examples_rclrs_minimal_pub_sub"
+version = "0.3.0"
+# This project is not military-sponsored, Jacob's employment contract just requires him to use this email address
+authors = ["Esteve Fernandez <esteve@apache.org>", "Nikolai Morin <nnmmgit@gmail.com>", "Jacob Hassold <jacob.a.hassold.civ@army.mil>"]
+edition = "2021"
+
+[[bin]]
+name = "minimal_subscriber"
+path = "src/minimal_subscriber.rs"
+
+[[bin]]
+name = "minimal_publisher"
+path = "src/minimal_publisher.rs"
+
+[[bin]]
+name = "zero_copy_subscriber"
+path = "src/zero_copy_subscriber.rs"
+
+[[bin]]
+name = "zero_copy_publisher"
+path = "src/zero_copy_publisher.rs"
+
+[dependencies]
+anyhow = {version = "1", features = ["backtrace"]}
+
+[dependencies.rclrs]
+version = "0.3"
+
+[dependencies.rosidl_runtime_rs]
+version = "0.3"
+
+[dependencies.std_msgs]
+version = "*"
+
+[package.metadata.ros]
+install_to_share = ["launch"]
