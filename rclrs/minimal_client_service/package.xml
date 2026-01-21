@@ -9,13 +9,9 @@
   <maintainer email="esteve@apache.org">Esteve Fernandez</maintainer>
   <license>Apache License 2.0</license>
 
-  <build_depend>example_interfaces</build_depend>
-  <build_depend>rclrs</build_depend>
-  <build_depend>rosidl_runtime_rs</build_depend>
-
-  <exec_depend>example_interfaces</exec_depend>
-  <exec_depend>rclrs</exec_depend>
-  <exec_depend>rosidl_runtime_rs</exec_depend>
+  <depend>example_interfaces</depend>
+  <depend>rclrs</depend>
+  <depend>rosidl_runtime_rs</depend>
 
   <export>
     <build_type>ament_cargo</build_type>

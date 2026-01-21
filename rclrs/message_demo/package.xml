@@ -9,13 +9,9 @@
   <maintainer email="nnmmgit@gmail.com">Nikolai Morin</maintainer>
   <license>Apache License 2.0</license>
 
-  <build_depend>rclrs</build_depend>
-  <build_depend>rosidl_runtime_rs</build_depend>
-  <build_depend>rclrs_example_msgs</build_depend>
-
-  <exec_depend>rclrs</exec_depend>
-  <exec_depend>rosidl_runtime_rs</exec_depend>
-  <exec_depend>rclrs_example_msgs</exec_depend>
+  <depend>rclrs</depend>
+  <depend>rosidl_runtime_rs</depend>
+  <depend>rclrs_example_msgs</depend>
 
   <export>
     <build_type>ament_cargo</build_type>

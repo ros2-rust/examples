@@ -12,13 +12,9 @@
   <maintainer email="jacob.a.hassold.civ@army.mil">Jacob Hassold</maintainer>
   <license>Apache License 2.0</license>
 
-  <build_depend>rclrs</build_depend>
-  <build_depend>rosidl_runtime_rs</build_depend>
-  <build_depend>example_interfaces</build_depend>
-
-  <exec_depend>rclrs</exec_depend>
-  <exec_depend>rosidl_runtime_rs</exec_depend>
-  <exec_depend>example_interfaces</exec_depend>
+  <depend>rclrs</depend>
+  <depend>rosidl_runtime_rs</depend>
+  <depend>example_interfaces</depend>
 
   <export>
     <build_type>ament_cargo</build_type>

@@ -27,8 +27,7 @@ path = "src/zero_copy_publisher.rs"
 
 [dependencies]
 anyhow = {version = "1", features = ["backtrace"]}
-rclrs = "0.6"
-rosidl_runtime_rs = "0.5"
+rclrs = "0.7"
 example_interfaces = "*"
 
 # This specific version is compatible with Rust 1.75

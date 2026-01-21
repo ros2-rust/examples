@@ -10,8 +10,8 @@ path = "src/message_demo.rs"
 
 [dependencies]
 anyhow = {version = "1", features = ["backtrace"]}
-rclrs = "0.6"
-rosidl_runtime_rs = "0.5"
+rclrs = "0.7"
+rosidl_runtime_rs = "0.6"
 rclrs_example_msgs = { version = "0.5", features = ["serde"] }
 serde_json = "1.0"
 
