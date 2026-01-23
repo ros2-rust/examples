@@ -1,7 +1,20 @@
 use anyhow::{Error, Result};
 use rclrs::*;
 
+use clap::Parser;
+
+/// Simple program to publish ROS 2 messages using clap
+#[derive(Parser, Debug)]
+#[command(long_about = None)]
+struct Args {
+    /// Number of messages to publish
+    #[arg(short, long)]
+    count: Option<u32>,
+}
+
 fn main() -> Result<(), Error> {
+    let args = Args::parse_from(extract_non_ros_args(std::env::args())?);
+
     let context = Context::default_from_env()?;
     let executor = context.create_basic_executor();
 
@@ -13,7 +26,7 @@ fn main() -> Result<(), Error> {
 
     let mut publish_count: u32 = 1;
 
-    while context.ok() {
+    while context.ok() && args.count.map_or(true, |count| publish_count <= count) {
         message.data = format!("Hello, world! {}", publish_count);
         println!("Publishing: [{}]", message.data);
         publisher.publish(&message)?;
