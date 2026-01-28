@@ -62,6 +62,7 @@ async fn fibonacci_action(node: Node, handle: RequestedGoal<Fibonacci>) -> Termi
             }
             Err(_) => {
                 // Cancel received, end the current execution
+                log_warn!(node.logger(), "Goal cancelled");
                 let cancelling = executing.begin_cancelling();
                 result.sequence = sequence;
                 return cancelling.cancelled_with(result);
