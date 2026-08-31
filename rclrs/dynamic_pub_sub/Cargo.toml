@@ -1,0 +1,18 @@
+[package]
+name = "examples_rclrs_dynamic_pub_sub"
+version = "0.4.1"
+authors = ["Luca Della Vedova <lucadellavr@gmail.com>"]
+edition = "2021"
+
+[[bin]]
+name = "dynamic_subscriber"
+path = "src/dynamic_subscriber.rs"
+
+[[bin]]
+name = "dynamic_publisher"
+path = "src/dynamic_publisher.rs"
+
+[dependencies]
+# TODO(luca) change this to the correct version once dynamic message support is released on crates.io
+rclrs = { git = "https://github.com/luca-della-vedova/ros2_rust", branch = "dynamic_messages" }
+anyhow = {version = "1", features = ["backtrace"]}

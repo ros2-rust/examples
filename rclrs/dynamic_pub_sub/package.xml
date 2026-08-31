@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model
+   href="http://download.ros.org/schema/package_format3.xsd"
+   schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>examples_rclrs_dynamic_pub_sub</name>
+  <version>0.4.1</version>
+  <description>Package containing an example of dynamic messages publishers and subscribtions in rclrs.</description>
+  <maintainer email="lucadellavr@gmail.com">Luca Della Vedova</maintainer>
+  <license>Apache License 2.0</license>
+
+  <build_depend>rclrs</build_depend>
+
+  <!-- Messages are only loaded at execution time so they are only exec dependencies -->
+  <exec_depend>example_interfaces</exec_depend>
+  <exec_depend>rclrs</exec_depend>
+
+  <export>
+    <build_type>ament_cargo</build_type>
+  </export>
+</package>
+
