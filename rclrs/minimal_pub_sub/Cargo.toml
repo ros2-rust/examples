@@ -27,8 +27,8 @@ path = "src/zero_copy_publisher.rs"
 
 [dependencies]
 anyhow = {version = "1", features = ["backtrace"]}
-rclrs = "0.7"
-ros-env = "0.2"
+rclrs = "0.8"
+ros-env = "0.3"
 
 [package.metadata.ros]
 install_to_share = ["launch"]

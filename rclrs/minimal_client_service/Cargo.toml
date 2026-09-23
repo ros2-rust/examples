@@ -19,5 +19,5 @@ path = "src/minimal_service.rs"
 [dependencies]
 anyhow = {version = "1", features = ["backtrace"]}
 tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread", "time"] }
-rclrs = "0.7"
-ros-env = "0.2"
+rclrs = "0.8"
+ros-env = "0.3"

@@ -10,7 +10,6 @@
   <license>Apache License 2.0</license>
 
   <depend>rclrs</depend>
-  <depend>rosidl_runtime_rs</depend>
   <depend>rclrs_example_msgs</depend>
 
   <export>

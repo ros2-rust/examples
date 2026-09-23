@@ -4,5 +4,5 @@ version = "0.5.0"
 edition = "2021"
 
 [dependencies]
-rclrs = "0.7"
-ros-env = "0.2"
+rclrs = "0.8"
+ros-env = "0.3"

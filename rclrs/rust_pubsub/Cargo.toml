@@ -12,5 +12,5 @@ name="simple_subscriber"
 path="src/simple_subscriber.rs"
 
 [dependencies]
-rclrs = "0.7.0"
-ros-env = "0.2"
+rclrs = "0.8"
+ros-env = "0.3"

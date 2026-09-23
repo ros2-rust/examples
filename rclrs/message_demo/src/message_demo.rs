@@ -1,7 +1,7 @@
 use std::convert::TryInto;
 
 use anyhow::{Error, Result};
-use rosidl_runtime_rs::{seq, BoundedSequence, Message, Sequence};
+use rclrs::rosidl_runtime_rs::{seq, BoundedSequence, Message, Sequence};
 
 use rclrs::*;
 use ros_env::*;

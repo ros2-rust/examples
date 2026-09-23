@@ -12,7 +12,6 @@
   <license>Apache License 2.0</license>
 
   <depend>rclrs</depend>
-  <depend>rosidl_runtime_rs</depend>
   <depend>example_interfaces</depend>
 
   <export>
