@@ -19,7 +19,11 @@ fn main() -> Result<(), Error> {
 
     let node = executor.create_node("minimal_service")?;
 
-    let _server = node.create_service::<AddTwoInts, _>("add_two_ints", handle_service)?;
+    let server = node.create_service::<AddTwoInts, _>("add_two_ints", handle_service)?;
+
+    // Enable introspection for this service
+    // if you want to be able to introspect the service calls e.g. with ros2 service echo
+    server.configure_introspection(ServiceIntrospectionState::Contents)?;
 
     println!("Starting server");
     executor.spin(SpinOptions::default()).first_error()?;

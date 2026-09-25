@@ -9,6 +9,10 @@ fn main() -> Result<(), Error> {
 
     let client = node.create_client::<AddTwoInts>("add_two_ints")?;
 
+    // Enable introspection for this client
+    // if you want to be able to introspect the service calls e.g. with ros2 service echo
+    client.configure_introspection(ServiceIntrospectionState::Contents)?;
+
     let promise = executor.commands().run(async move {
         println!("Waiting for service...");
         client.notify_on_service_ready().await.unwrap();
