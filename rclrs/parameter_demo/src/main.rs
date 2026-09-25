@@ -11,10 +11,41 @@ fn main() -> Result<(), RclrsError> {
         .default("Hello".into())
         .mandatory()?;
 
-    let _subscription =
-        node.create_subscription("greet", move |msg: example_interfaces::msg::String| {
+    let reliability_override = node
+        .declare_parameter::<Arc<str>>("qos_override/reliability")
+        .optional()?
+        .get();
+
+    // Use PrimitiveOptions and override the reliability if needed.
+    // PrimitiveOptions ensures that the subscription will use the default
+    // QoS of a subscription for any setting that is not overridden.
+    let mut subscription_options = PrimitiveOptions::new("greet");
+    if let Some(reliability_override_str) = reliability_override {
+        match &*reliability_override_str {
+            "reliable" => {
+                subscription_options.reliability = Some(QoSReliabilityPolicy::Reliable);
+            }
+            "best_effort" => {
+                subscription_options.reliability = Some(QoSReliabilityPolicy::BestEffort);
+            }
+            "best_available" => {
+                subscription_options.reliability = Some(QoSReliabilityPolicy::BestAvailable);
+            }
+            "system_default" => {
+                subscription_options.reliability = Some(QoSReliabilityPolicy::SystemDefault);
+            }
+            x => {
+                panic!("Unknown reliability override string: {x}");
+            }
+        }
+    }
+
+    let _subscription = node.create_subscription(
+        subscription_options,
+        move |msg: example_interfaces::msg::String| {
             println!("{}, {}", greeting.get(), msg.data);
-        })?;
+        },
+    )?;
 
     println!(
         "Ready to provide a greeting. \
