@@ -1,0 +1,22 @@
+[package]
+name = "action_demo"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "action_client"
+path = "src/action_client.rs"
+
+[[bin]]
+name = "action_server"
+path = "src/action_server.rs"
+
+[dependencies]
+anyhow = {version = "1", features = ["backtrace"]}
+tokio = "*"
+rclrs = "0.7"
+futures = "*"
+example_interfaces = "*"
+
+# This specific version is compatible with Rust 1.75
+backtrace = "=0.3.74"
